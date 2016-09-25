@@ -5,6 +5,7 @@ int main()
 {
     //get user input
     vector<string> userInput = getUserInput();
+	//comment
 
     //for every word in the dictionary, check if you can make that word with the user 
 }
