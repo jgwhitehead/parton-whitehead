@@ -54,38 +54,26 @@ std::string getUserInput(std::string strPrompt)
 //Each letter can only be used once
 //return true if you can make the given word with the given letters. 
 //Each letter can only be used once
-bool validateWord(std::string strLetters, std::vector <std::string> vecDictionary) {
+bool validateWord(std::string strLetters, std::string strCheckWord) {
 	//loop through each letter of the word. If that letter exists in the given array of letters
 	// then carry on but remove the letter from the array so it can't be used again
 
-	// loop through each word in the dictionary
-	for (int i = 0; i <= vecDictionary.size; i++) {
-		//read each dictionary word into a temp string
-		std::string strWordWorking;
-		strWordWorking = vecDictionary[i];
-
-
-		for (int j = 0; j <= strLetters.size; j++) {
+		for (int j = 0; j <= strCheckWord.size; j++) {
 
 			//read each letter of the word into a temp string
 			std::string strCheckLetter;
 			strCheckLetter = strLetters[j];
 
-			auto autCheck = std::find(strWordWorking.begin(), strWordWorking.end(), strCheckLetter);
-			if ()
-
-
+			auto autIterFound = std::find(strLetters.begin(), strLetters.end(), strCheckLetter);
+			if (autIterFound!=strLetters.end()) {
+				strLetters.erase(autIterFound);
+			}
+			else {
+				return false;
+			}
 		}
-		bool boolCheck = true;
-		do {
 
-
-		} while (boolCheck != false)
-
-
-	}
-
-
+		return true;
 }
 int main()
 {
