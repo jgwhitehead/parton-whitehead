@@ -15,7 +15,24 @@ std::string getUserInput(std::string strPrompt);
 }
 
 //read from a dictionary file to return a vector of words
-vector<string> getDictionaryWords(){
+void getDictionaryWords(std::string strFilePath){
+
+	std::string strWord;
+
+	//open file from given path
+	std::ifstream file.open(strFilePath);
+
+
+	while (file >> strWord) {
+		std::cout << strWord << "\n";
+			
+	}
+
+
+
+
+
+
 
 }
 
@@ -32,12 +49,12 @@ std::string getUserInput(std::string strPrompt)
 		std::getline(std::cin, strInput);
 
 		//check we have the correct number of letters
-		if (strResult.size < 8 || strResult.size>9) {
+		if (strResult.size < 8 || strResult.size > 9) {
 			std::cout << "Please enter 8 or 9 letters.\n";
 		}
 
     //return the vector
-    }while (strResult.size < 8 || strResult.size>9);
+    }while (strResult.size < 8 || strResult.size > 9);
 	return strResult;
 }
 
