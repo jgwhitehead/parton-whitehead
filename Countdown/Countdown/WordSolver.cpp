@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -20,19 +21,13 @@ void getDictionaryWords(std::string strFilePath){
 	std::string strWord;
 
 	//open file from given path
-	std::ifstream file.open(strFilePath);
+	std::ifstream file;
+	file.open(strFilePath);
 
 
 	while (file >> strWord) {
-		std::cout << strWord << "\n";
-			
+		std::cout << strWord << "\n";	
 	}
-
-
-
-
-
-
 
 }
 
