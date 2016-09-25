@@ -55,34 +55,26 @@ std::string getUserInput(std::string strPrompt)
 
 //return true if you can make the given word with the given letters.
 //Each letter can only be used once
-bool validateWord(std::string strLetters, std::vector<std::string> vecDictionary)
-{
-    //loop through each letter of the word. If that letter exists in the given array of letters
-    // then carry on but remove the letter from the array so it can't be used again
+bool validateWord(std::string strLetters, std::string strCheckWord) {
+	//loop through each letter of the word. If that letter exists in the given array of letters
+	// then carry on but remove the letter from the array so it can't be used again
 
-    // loop through each word in the dictionary
-    for (int i = 0; i <= vecDictionary.size; i++)
-    {
-        //read each dictionary word into a temp string
-        std::string strWordWorking;
-        strWordWorking = vecDictionary[i];
+		for (int j = 0; j <= strCheckWord.size; j++) {
 
-        for (int j = 0; j <= strLetters.size; j++)
-        {
+			//read each letter of the word into a temp string
+			std::string strCheckLetter;
+			strCheckLetter = strLetters[j];
 
-            //read each letter of the word into a temp string
-            std::string strCheckLetter;
-            strCheckLetter = strLetters[j];
+			auto autIterFound = std::find(strLetters.begin(), strLetters.end(), strCheckLetter);
+			if (autIterFound!=strLetters.end()) {
+				strLetters.erase(autIterFound);
+			}
+			else {
+				return false;
+			}
+		}
 
-            auto autCheck = std::find(strWordWorking.begin(), strWordWorking.end(), strCheckLetter);
-            if ()
-        }
-        bool boolCheck = true;
-        do
-        {
-
-        } while (boolCheck != false)
-    }
+		return true;
 }
 int main()
 {
@@ -94,14 +86,12 @@ int main()
     vector<string> dictionaryWords = getDictionaryWords();
 
     //if the word can be made from the letters add it to the matches vector
-    vector<string> matches;
+vector<string> matches;
     //print the matches
 
-    for (auto match : matches)
-    {
-        std::cout << match << '\n';
-    }
+for (auto match: matches)
+  std::cout << match << '\n';
 
     //print the size of the longest match
     printf("Longest word is: %s with %s letters",matches.back(), strlen(matches.back());
-}
+}   
