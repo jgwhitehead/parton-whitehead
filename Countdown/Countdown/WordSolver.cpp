@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include<vector>
 
 using namespace std;
 
@@ -18,17 +19,18 @@ std::string getUserInput(std::string strPrompt);
 //read from a dictionary file to return a vector of words
 void getDictionaryWords(std::string strFilePath){
 
-	std::string strWord;
+	std::vector <std::string> vecstrAllWords; // hold all words
+	std::string strWord; //temp string to read into
 
 	//open file from given path
-	std::ifstream file;
-	file.open(strFilePath);
-
+	std::ifstream file(strFilePath);
 
 	while (file >> strWord) {
-		std::cout << strWord << "\n";	
+		// adds each word one by one to our vector
+		vecstrAllWords.push_back(strWord);
 	}
-
+	//close file
+	file.close();
 }
 
 //get the letters of the challenge. 
