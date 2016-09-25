@@ -14,6 +14,12 @@ std::string getUserInput(std::string strPrompt);
 
     //for every word in the dictionary, check if you can make that word with the user
     vector<string> dictionaryWords = getDictionaryWords(); 
+
+    //if the word can be made from the letters add it to the matches vector
+
+    //print the matches
+
+    //print the size of the longest match
 }
 
 //read from a dictionary file to return a vector of words
