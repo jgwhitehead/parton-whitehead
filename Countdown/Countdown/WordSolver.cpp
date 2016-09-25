@@ -1,5 +1,9 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
+
+std::string getUserInput(std::string strPrompt);
 
 int main()
 {
@@ -12,12 +16,22 @@ int main()
 
 //get the letters of the challenge. 
 //Returns a vector of individual character strings
-vector<string> getUserInput(){
-    //read from the command line
 
-    //check that they only entered 8 or 9 letters, otherwise ask again
+std::string getUserInput(std::string strPrompt)
+{
+	// need to declare strResult ahead of the loop so we can return it at the end
+	std::string strResult = "";
+	do {
+		std::string strInput = "";
+		//use getline to avoid errors with inputs
+		std::cout << strPrompt;
+		std::getline(std::cin, strInput);
 
-    //turn the string input into a vector of individual letters
+		//check we have the correct number of letters
+		if (strResult.size < 8 || strResult.size>9) {
+			std::cout << "Please enter 8 or 9 letters.\n";
+		}
 
-    //return the vector
+	} while (strResult.size < 8 || strResult.size>9);
+	return strResult;
 }
