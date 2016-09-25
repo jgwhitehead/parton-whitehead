@@ -85,8 +85,11 @@ int main()
     vector<string> dictionaryWords = getDictionaryWords();
 
     //if the word can be made from the letters add it to the matches vector
-
+vector<string> matches;
     //print the matches
 
+for (auto match: matches)
+  std::cout << match << '\n';
+
     //print the size of the longest match
-}
+}   
