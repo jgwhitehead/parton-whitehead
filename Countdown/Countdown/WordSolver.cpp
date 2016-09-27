@@ -42,6 +42,7 @@ vector<string> getUserInput() {
         cout << "Please enter 8 or 9 letters.\n";
         getline(cin, strResult);
 
+
         //TODO: check that the user input is only letters. If not, complain to user
 
         //return the vector
@@ -101,6 +102,10 @@ int main() {
     }
 
     //print the size of the longest match
+    if(!matches.empty()){
     printf("Longest word is: %s with %i letters\n", matches.back(),
             matches.back().size());
+    }else{
+        cout << "No words found?!";
+    }
 }
